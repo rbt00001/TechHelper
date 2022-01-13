@@ -1,0 +1,22 @@
+{
+  "name": "server",
+  "version": "1.0.0",
+  "description": "As a contractor I would like to have a limited follow along to help assist newer technicians or helpers in the field.",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "seed": "node seeds/seed.js",
+    "watch": "nodemon server.js"
+  },
+  "author": "Ben Townsend",
+  "license": "ISC",
+  "dependencies": {
+    "apollo-server-express": "^2.25.3",
+    "express": "^4.17.2",
+    "graphql": "^15.8.0",
+    "mongoose": "^5.13.13"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.6"
+  }
+}
