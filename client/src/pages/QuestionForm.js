@@ -102,6 +102,7 @@ const questions = [
 
 const setupQuestionForm = () => {
     // set qState == thisQuestion
+
 }
 
 const handleQuestion = (thisQuestion) => {
@@ -124,3 +125,6 @@ const handleQuestion = (thisQuestion) => {
         break;
     }
 }
+
+// let [ var for state , updateForm ] = useState ()  <<<< to init state 
+// create form elements in 
