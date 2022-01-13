@@ -22,10 +22,10 @@ const questions = [
 
   {
     qID: 3,
-    qType: "bad-thermo",
-    questionText: "Would the customer like to replace thermostat for $200",
+    qType: "bad-part",
+    questionText: "Would the customer like to replace _______ for _________",
     answer1: { answer: "No", nextQuestion: "EXIT" },
-    answer2: { answer: "Yes", nextQuestion: 4 },
+    answer2: { answer: "Yes", nextQuestion: 888 },
   },
   {
     qID: 4 ,
@@ -52,43 +52,50 @@ const questions = [
     qID: 7,
     qType: "outside-high",
     questionText: "Remove the disconnect and ensure power is off. Discharge the capacitor and take MFD reading. Are the readings normal?",
-    answer1: { answer: "Yes", nextQuestion: 10 },
-    answer2: { answer: "No", nextQuestion: 11 },
+    answer1: { answer: "Yes", nextQuestion: 9 },
+    answer2: { answer: "No", nextQuestion: 3 }, // Have this go to the purchase agreement to replace capacitor
   },
   {
     qID: 8,
     qType: "outside-low",
     questionText: "Take a volt reading of 24V on contactor. Are you getting a call for ~24V",
-    answer1: { answer: "Yes", nextQuestion:  },
-    answer2: { answer: "No", nextQuestion:  },
+    answer1: { answer: "Yes", nextQuestion: 10 },
+    answer2: { answer: "No", nextQuestion: 11 },
   },
   {
     qID: 9,
     qType: "outside-high",
-    questionText: "The breaker and/or fuse may have gone out or tripped. Properly disconnect and before you flip the breaker perform Ohm readings. Was the fan and compressor within range?",
-    answer1: { answer: "Yes", nextQuestion:  },
+    questionText: "Ensure power is disconnected and terminal leads to compressor (one wire at a time and take pictures of the wire placement) Perform Ohm reading to ground and then to terminal connections. Were the readings normal?",
+    answer1: { answer: "Yes", nextQuestion: 10 },
     answer2: { answer: "No", nextQuestion:  },
   },
   {
-    qID: "",
-    qType: "",
-    questionText: "",
-    answer1: { answer: "", nextQuestion:  },
-    answer2: { answer: "", nextQuestion:  },
+    qID: 10,
+    qType: "outside-high",
+    questionText: "Take amp readings for compressor and fan. Are these within normal range? Power needs to be on and contactor engaged.",
+    answer1: { answer: "Yes", nextQuestion: 7 },
+    answer2: { answer: "No", nextQuestion: 12 },
   },
   {
-    qID: "",
-    qType: "",
-    questionText: "",
-    answer1: { answer: "", nextQuestion:  },
-    answer2: { answer: "", nextQuestion:  },
+    qID: 11,
+    qType: "outside-low",
+    questionText: "Are you getting 0V or 12V?",
+    answer1: { answer: "0V", nextQuestion: 1 },
+    answer2: { answer: "12V", nextQuestion: 13 },
   },
   {
-    qID: "",
-    qType: "",
-    questionText: "",
-    answer1: { answer: "", nextQuestion:  },
-    answer2: { answer: "", nextQuestion:  },
+    qID: 12,
+    qType: "outside-high",
+    questionText: "Wait for compressor to cool off and check it again. While waiting check wires to corrosion and looseness. Is it still grounded?",
+    answer1: { answer: "Yes", nextQuestion: 3 },
+    answer2: { answer: "No", nextQuestion: 3 },
+  },
+   {
+    qID: 13,
+    qType: "outside-high",
+    questionText: "Check contactor for pitting and voltage on load side of contactor. Does the contactor need to be replaced?",
+    answer1: { answer: "Yes", nextQuestion: 3 },
+    answer2: { answer: "", nextQuestion: 7 },
   },
 
 ];
@@ -113,5 +120,7 @@ const handleQuestion = (thisQuestion) => {
             })
             askQuestion(nextQuestion)
         }
+    } else { 
+        break;
     }
 }
