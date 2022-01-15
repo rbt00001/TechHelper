@@ -95,7 +95,7 @@ const questions = [
     qType: "outside-high",
     questionText: "Check contactor for pitting and voltage on load side of contactor. Does the contactor need to be replaced?",
     answer1: { answer: "Yes", nextQuestion: 3 },
-    answer2: { answer: "", nextQuestion: 7 },
+    answer2: { answer: "No", nextQuestion: 7 },
   },
 
 ];
